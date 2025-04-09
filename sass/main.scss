@@ -1,0 +1,99 @@
+/*
+*--- FONT SIZE SYSTEM (px) ---
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+REM = Desired Font Size / Default Font Size
+REM = 10 px / 16 px = 0.6250 = 62.5%
+
+*--- WHITESPACE ---*
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*--- BORDER RADIUS (px) ---
+9 / 11
+
+*--- LINE HEIGHT ---
+1 / 1.05 / 1.2 / 1.6 / 1.8
+
+*--- LETTER SPACING (px)---
+-0.5 / -1 / 0.75
+*/
+
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+@import "./components/button";
+
+@import "./pages/home";
+
+// GROUP: HERO
+.header {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-08);
+
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-tint-100, 0.8),
+      rgba($color-shade-100, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    inset: 4rem auto auto 4rem;
+  }
+
+  &__logo {
+    height: 3.2rem;
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-08);
+    transform: translateY(-10%);
+
+    // position: absolute;
+    // inset: 40% auto auto 50%;
+    // transform: translate(-50%, -50%);
+  }
+}
+
+.heading-primary {
+  color: $color-white-100;
+  text-transform: uppercase;
+  margin-bottom: var(--space-08);
+
+  backface-visibility: hidden;
+
+  &--main {
+    font-size: var(--fs-62);
+    font-weight: 300;
+    letter-spacing: 3.2rem;
+
+    animation: moveInLeft 1s ease-out;
+  }
+
+  &--sub {
+    font-size: var(--fs-20);
+    font-weight: 500;
+    letter-spacing: 1.2rem;
+
+    animation: moveInRight 1s ease-out;
+  }
+}
