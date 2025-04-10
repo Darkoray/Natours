@@ -18,18 +18,11 @@ REM = 10 px / 16 px = 0.6250 = 62.5%
 -0.5 / -1 / 0.75
 */
 
-@import "./abstracts/functions";
-@import "./abstracts/mixins";
-@import "./abstracts/variables";
-
-@import "./base/animations";
-@import "./base/base";
-@import "./base/typography";
-@import "./base/utilities";
-
-@import "./components/button";
-
-@import "./pages/home";
+@use "./base" as *;
+@use "./pages" as *;
+@use "./layouts" as *;
+@use "./components" as *;
+@use "./abstracts" as *;
 
 // GROUP: HERO
 .header {

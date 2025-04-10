@@ -1,14 +1,14 @@
 {
   "name": "natours",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "landing page for natours",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "compile:sass": "sass sass/main.scss css/style.css -w"
   },
+  "author": "Darkoray",
+  "license": "ISC",
   "devDependencies": {
-    "vite": "^6.2.0"
+    "sass": "^1.86.3"
   }
 }
