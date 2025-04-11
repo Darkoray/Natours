@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.grid {
+  display: grid;
+  gap: $space-12;
+
+  &--col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--col-3 {
+    grid-template-columns: repeat(3, 1fr);
+
+    .col-2-of-3 {
+      grid-column: span 2;
+    }
+  }
+
+  &--col-4 {
+    grid-template-columns: repeat(4, 1fr);
+
+    .col-2-of-4 {
+      grid-column: span 2;
+    }
+
+    .col-3-of-4 {
+      grid-column: span 3;
+    }
+  }
+}

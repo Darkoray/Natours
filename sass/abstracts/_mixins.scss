@@ -1,6 +1,7 @@
-// abstracts/_mixins.scss
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@use "variables" as *;
+
+@mixin stack-spacing($space) {
+  > * + * {
+    margin-top: $space;
+  }
 }

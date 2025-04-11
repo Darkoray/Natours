@@ -1,0 +1,68 @@
+@use "../abstracts" as *;
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: $fs-16;
+  line-height: 1.7;
+  color: $color-gray-100;
+
+  padding: $space-12;
+}
+
+.heading-primary {
+  color: $color-white-100;
+  text-transform: uppercase;
+  margin-bottom: $space-08;
+  transform: translateY(-2rem);
+
+  backface-visibility: hidden;
+
+  &--main {
+    font-size: $fs-62;
+    font-weight: 300;
+    letter-spacing: 3.2rem;
+
+    animation: moveInLeft 1s ease-out;
+  }
+
+  &--sub {
+    font-size: $fs-20;
+    font-weight: 500;
+    letter-spacing: 1.2rem;
+
+    animation: moveInRight 1s ease-out;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+
+  font-size: $fs-36;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    $color-tint-100,
+    $color-shade-100
+  );
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black-100, $alpha: 0.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $fs-18;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $fs-18;
+}

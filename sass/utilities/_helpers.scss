@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.u-center-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-margin-bottom {
+  &--md {
+    margin-bottom: $space-32;
+  }
+
+  &--lg {
+    margin-bottom: $space-80;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+// TITLE: Section and Container Styles
+.section {
+  padding-block: $space-64;
+}
+
+.container {
+  width: 100%;
+  max-width: clamp(30rem, 80%, 120rem);
+  margin-inline: auto;
+  padding: 1rem;
+}

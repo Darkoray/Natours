@@ -1,22 +1,218 @@
-/* Error: Module loop: this module is already being loaded.
- *    ,--> sass\components\_index.scss
- * 1  | @forward "./index";
- *    | ^^^^^^^^^^^^^^^^^^ new load
- *    '
- *    ,--> sass\main.scss
- * 24 | @use "./components" as *;
- *    | ======================== original load
- *    '
- *   sass\components\_index.scss 1:1  @use
- *   sass\main.scss 24:1              root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: Module loop: this module is already being loaded.\a    \250c \2500 \2500 > sass\\components\\_index.scss\a 1  \2502  @forward "./index";\d\a    \2502  ^^^^^^^^^^^^^^^^^^ new load\a    \2575 \a    \250c \2500 \2500 > sass\\main.scss\a 24 \2502  @use "./components" as *;\d\a    \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a    \2575 \a   sass\\components\\_index.scss 1:1  @use\a   sass\\main.scss 24:1              root stylesheet';
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.section {
+  padding-block: clamp(4rem, 5vw, 6.4rem);
+}
+
+.container {
+  width: 100%;
+  max-width: clamp(30rem, 80%, 120rem);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
+  line-height: 1.7;
+  color: #777;
+  padding: clamp(0.75rem, 1.2vw, 1.2rem);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
+  transform: translateY(-2rem);
+  backface-visibility: hidden;
+}
+.heading-primary--main {
+  font-size: clamp(3.875rem, 5vw + 2rem, 6.2rem);
+  font-weight: 300;
+  letter-spacing: 3.2rem;
+  animation: moveInLeft 1s ease-out;
+}
+.heading-primary--sub {
+  font-size: clamp(1.25rem, 1.4vw + 0.7rem, 2rem);
+  font-weight: 500;
+  letter-spacing: 1.2rem;
+  animation: moveInRight 1s ease-out;
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-size: clamp(2.25rem, 3vw + 1.2rem, 3.6rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: clamp(1.125rem, 1.2vw + 0.6rem, 1.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: clamp(1.125rem, 1.2vw + 0.6rem, 1.8rem);
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.about {
+  background-color: #f7f7f7;
+  padding: clamp(1.5rem, 2vw, 2.4rem);
+}
+.about__description > * + * {
+  margin-top: clamp(3rem, 3.5vw, 4.8rem);
+}
+.about__description-text-box > * + * {
+  margin-top: clamp(1rem, 1.5vw, 1.6rem);
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
+}
+.header__logo-box {
+  position: absolute;
+  inset: 4rem auto auto 4rem;
+}
+.header__logo {
+  height: 3.2rem;
+}
+.header__heading {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.8rem);
+  transform: translateY(-10%);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(0.75rem, 1.2vw, 1.2rem);
+}
+.grid--col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+.grid--col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--col-3 .col-2-of-3 {
+  grid-column: span 2;
+}
+.grid--col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--col-4 .col-2-of-4 {
+  grid-column: span 2;
+}
+.grid--col-4 .col-3-of-4 {
+  grid-column: span 3;
+}
+
+.btn:link, .btn:visited {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: clamp(1rem, 1.5vw, 1.6rem) clamp(3rem, 3.5vw, 4.8rem);
+  border-radius: 10rem;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s backwards;
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.u-center-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-margin-bottom--md {
+  margin-bottom: clamp(2rem, 2.5vw, 3.2rem);
+}
+.u-margin-bottom--lg {
+  margin-bottom: clamp(5rem, 6vw, 8rem);
+}
+
+/*# sourceMappingURL=style.css.map */
