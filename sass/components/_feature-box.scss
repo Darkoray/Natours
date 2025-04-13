@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.feature-box {
+  height: 100%;
+  background-color: rgba($color-white-100, $alpha: 0.6);
+  font-size: $fs-14;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black-100, $alpha: 0.15);
+  padding: $space-48 $space-24;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.02);
+  }
+
+  &__icon {
+    font-size: $fs-44;
+    background-image: linear-gradient(
+      to right,
+      $color-tint-100,
+      $color-shade-100
+    );
+    background-clip: text;
+    color: transparent;
+  }
+}

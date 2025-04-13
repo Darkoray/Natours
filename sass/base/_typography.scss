@@ -3,7 +3,7 @@
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: $fs-16;
+  font-size: $default-fs;
   line-height: 1.7;
   color: $color-gray-100;
 
@@ -64,5 +64,5 @@ body {
 }
 
 .paragraph {
-  font-size: $fs-18;
+  font-size: $default-fs;
 }

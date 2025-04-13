@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.about {
+  background-color: $color-gray-200;
+  // margin-top: -20vh;
+
+  &__description {
+    @include stack-spacing($space-48);
+  }
+
+  .grid {
+    gap: $space-48;
+  }
+}
+
+.features {
+  transform: skewY(-7deg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-tint-100, 0.8),
+      rgba($color-shade-100, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  padding-block: $space-128;
+
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  .grid {
+    gap: $space-24;
+  }
+}
+
+.tours {
+
+}

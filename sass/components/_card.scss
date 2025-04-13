@@ -1,0 +1,189 @@
+@use "../abstracts" as *;
+
+.tours {
+  .grid {
+    gap: $space-48;
+  }
+
+  @include stack-spacing($space-64);
+}
+
+.card {
+  position: relative;
+  perspective: 150rem;
+  height: 50rem;
+
+  &__side {
+    position: absolute;
+    inset: 0 auto auto 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black-100, $alpha: 0.15);
+    overflow: hidden;
+
+    &--front {
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tint-200,
+          $color-secondary-100
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tint-100,
+          $color-primary-100
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tint-300,
+          $color-tertiary-100
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  &__picture {
+    background-size: cover;
+    background-blend-mode: screen;
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tint-200,
+          $color-secondary-100
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tint-100,
+          $color-primary-100
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tint-300,
+          $color-tertiary-100
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: $fs-24;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white-100;
+    position: absolute;
+    inset: 12rem 2rem auto auto;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: $space-12 $space-24;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tint-200, 0.85),
+        rgba($color-secondary-100, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tint-100, 0.85),
+        rgba($color-primary-100, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tint-300, 0.85),
+        rgba($color-tertiary-100, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding-block: $space-48;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      align-items: center;
+      gap: $space-12;
+      height: 100%;
+
+      li {
+        text-align: center;
+        font-size: $fs-14;
+
+        &:not(:last-child) {
+          border-bottom: $color-gray-300 1px solid;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: $space-64;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-gray-200;
+  }
+
+  &__price-only {
+    font-size: $fs-14;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: $fs-62;
+    font-weight: 200;
+  }
+}

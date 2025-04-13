@@ -33,7 +33,18 @@ $space-128: clamp(8rem, 9vw, 12.8rem); // 128px
 $color-primary-100: #55c57a;
 $color-tint-100: #7ed56f;
 $color-shade-100: #28b485;
+
+$color-secondary-100: #ff7730;
+$color-tint-200: #ffb900;
+
+$color-tertiary-100: #5643fa;
+$color-tint-300: #2998ff;
+
 $color-white-100: #fff;
+$color-black-100: #000;
 $color-gray-100: #777;
 $color-gray-200: #f7f7f7;
-$color-black-100: #000;
+$color-gray-300: #eee;
+
+// TITLE: Defaults
+$default-fs: $fs-16;

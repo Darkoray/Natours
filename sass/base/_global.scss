@@ -1,8 +1,7 @@
 @use "../abstracts" as *;
 
-// TITLE: Section and Container Styles
-.section {
-  padding-block: $space-64;
+main {
+  @include stack-spacing($space-128);
 }
 
 .container {

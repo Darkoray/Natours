@@ -8,6 +8,10 @@
 }
 
 .u-margin-bottom {
+  &--sm {
+    margin-bottom: $space-16;
+  }
+
   &--md {
     margin-bottom: $space-32;
   }

@@ -14,8 +14,8 @@ body {
   box-sizing: border-box;
 }
 
-.section {
-  padding-block: clamp(4rem, 5vw, 6.4rem);
+main > * + * {
+  margin-top: clamp(8rem, 9vw, 12.8rem);
 }
 
 .container {
@@ -77,7 +77,7 @@ body {
 }
 
 .paragraph {
-  font-size: clamp(1.125rem, 1.2vw + 0.6rem, 1.8rem);
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
 }
 
 @keyframes moveInLeft {
@@ -118,13 +118,25 @@ body {
 }
 .about {
   background-color: #f7f7f7;
-  padding: clamp(1.5rem, 2vw, 2.4rem);
 }
 .about__description > * + * {
   margin-top: clamp(3rem, 3.5vw, 4.8rem);
 }
-.about__description-text-box > * + * {
-  margin-top: clamp(1rem, 1.5vw, 1.6rem);
+.about .grid {
+  gap: clamp(3rem, 3.5vw, 4.8rem);
+}
+
+.features {
+  transform: skewY(-7deg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  padding-block: clamp(8rem, 9vw, 12.8rem);
+}
+.features > * {
+  transform: skewY(7deg);
+}
+.features .grid {
+  gap: clamp(1.5rem, 2vw, 2.4rem);
 }
 
 .header {
@@ -151,7 +163,6 @@ body {
 
 .grid {
   display: grid;
-  gap: clamp(0.75rem, 1.2vw, 1.2rem);
 }
 .grid--col-2 {
   grid-template-columns: 1fr 1fr;
@@ -177,6 +188,7 @@ body {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
   transition: all 0.2s;
   padding: clamp(1rem, 1.5vw, 1.6rem) clamp(3rem, 3.5vw, 4.8rem);
   border-radius: 10rem;
@@ -200,6 +212,198 @@ body {
   background-color: #fff;
   color: #777;
 }
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+.btn-text:link, .btn-text:visited {
+  display: inline-block;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
+  color: #55c57a;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.composition {
+  position: relative;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+  transition: all 0.2s;
+}
+.composition__photo {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  outline-offset: 2rem;
+  z-index: 10;
+  transition: all 0.2s;
+}
+.composition__photo:hover {
+  outline: #55c57a 1.4rem solid;
+  transform: scale(1.05) translateY(-0.5px);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+.composition__photo--p1 {
+  inset: -2rem auto auto 0;
+}
+.composition__photo--p2 {
+  inset: 2rem 0 auto auto;
+}
+.composition__photo--p3 {
+  inset: 10rem auto auto 20%;
+}
+
+.feature-box {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.4rem);
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  padding: clamp(3rem, 3.5vw, 4.8rem) clamp(1.5rem, 2vw, 2.4rem);
+  transition: transform 0.3s;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.02);
+}
+.feature-box__icon {
+  font-size: clamp(2.75rem, 3.5vw + 1.5rem, 4.4rem);
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  color: transparent;
+}
+
+.tours .grid {
+  gap: clamp(3rem, 3.5vw, 4.8rem);
+}
+.tours > * + * {
+  margin-top: clamp(4rem, 5vw, 6.4rem);
+}
+
+.card {
+  position: relative;
+  perspective: 150rem;
+  height: 50rem;
+}
+.card__side {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__side--back-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.card__side--back-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #55c57a);
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+.card__picture {
+  background-size: cover;
+  background-blend-mode: screen;
+  height: 23rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+}
+.card__picture--2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #55c57a), url(../img/nat-6.jpg);
+}
+.card__picture--3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
+.card__heading {
+  font-size: clamp(1.5rem, 2vw + 0.8rem, 2.4rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  inset: 12rem 2rem auto auto;
+  width: 75%;
+}
+.card__heading-span {
+  padding: clamp(0.75rem, 1.2vw, 1.2rem) clamp(1.5rem, 2vw, 2.4rem);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(85, 197, 122, 0.85));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
+}
+.card__details {
+  padding-block: clamp(3rem, 3.5vw, 4.8rem);
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: clamp(0.75rem, 1.2vw, 1.2rem);
+  height: 100%;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.4rem);
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: #eee 1px solid;
+}
+.card__cta {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 5vw, 6.4rem);
+}
+.card__price-box {
+  text-align: center;
+  color: #f7f7f7;
+}
+.card__price-only {
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.4rem);
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: clamp(3.875rem, 5vw + 2rem, 6.2rem);
+  font-weight: 200;
+}
 
 .u-center-items {
   display: flex;
@@ -208,6 +412,9 @@ body {
   align-items: center;
 }
 
+.u-margin-bottom--sm {
+  margin-bottom: clamp(1rem, 1.5vw, 1.6rem);
+}
 .u-margin-bottom--md {
   margin-bottom: clamp(2rem, 2.5vw, 3.2rem);
 }
