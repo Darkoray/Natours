@@ -1,13 +1,5 @@
 @use "../abstracts" as *;
 
-.tours {
-  .grid {
-    gap: $space-48;
-  }
-
-  @include stack-spacing($space-64);
-}
-
 .card {
   position: relative;
   perspective: 150rem;
@@ -31,9 +23,6 @@
 
     &--back {
       transform: rotateY(180deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       &-1 {
         background-image: linear-gradient(
@@ -148,12 +137,9 @@
     ul {
       list-style: none;
       width: 80%;
-      display: flex;
-      flex-direction: column;
-      justify-self: center;
-      align-items: center;
-      gap: $space-12;
       height: 100%;
+      justify-self: center;
+      gap: $space-12;
 
       li {
         text-align: center;

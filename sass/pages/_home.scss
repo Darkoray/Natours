@@ -34,5 +34,16 @@
 }
 
 .tours {
+  @include stack-spacing($space-64);
 
+  .grid {
+    gap: $space-48;
+  }
+}
+
+.stories {
+  position: relative;
+  font-size: $default-fs;
+  padding-block: $space-64;
+  @include stack-spacing($space-64);
 }

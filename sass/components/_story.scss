@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.story {
+  width: 80%;
+  background-color: rgba($color-gray-300, $alpha: 0.6);
+  border-radius: 3px;
+  box-shadow: 0 3rem 6rem rgba($color-black-100, $alpha: 0.1);
+  padding: $space-48 $space-64;
+  transform: skewX(-12deg);
+
+  &__shape {
+    float: left;
+    width: 15rem;
+    height: 15rem;
+    shape-outside: circle();
+    clip-path: circle();
+    margin-inline: $space-16;
+    transform: translateX(-2rem) skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    inset: 0;
+    color: $color-white-100;
+    font-size: $fs-20;
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.3s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
