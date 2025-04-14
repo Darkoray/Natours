@@ -2,6 +2,8 @@
 
 // TITLE: Header btn
 .btn {
+  padding: $space-16 $space-48;
+
   &:link,
   &:visited {
     position: relative;
@@ -12,9 +14,8 @@
 
     font-size: $default-fs;
 
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 
-    padding: $space-16 $space-48;
     border-radius: 10rem;
   }
 
@@ -25,6 +26,16 @@
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
+    }
+  }
+
+  &:hover &__style {
+    transform: translateX(-1rem);
+
+    &::after {
+      opacity: 1;
+      transform: translateX(5px);
+      transition: all 0.3s ease-in-out;
     }
   }
 
@@ -68,6 +79,21 @@
     //   background-color: $color-primary-100;
     // }
   }
+
+  &__style {
+    display: inline-block;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: "→";
+
+      position: absolute;
+      opacity: 0;
+      transform: translateX(-5px);
+
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
 // TITLE: About btn
@@ -95,4 +121,41 @@
 
   &:active {
   }
+}
+
+// -------------------------
+
+.link {
+  position: relative;
+  // color: var(--accent-100);
+  // border-bottom: var(--accent-100) 1px solid;
+
+  ::after {
+    content: "→";
+
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-5px);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  :hover,
+  :active {
+    transform: translateX(-1rem);
+    border-bottom: transparent 1px solid;
+
+    :after {
+      opacity: 1;
+      transform: translateX(5px);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.link-more {
+  cursor: pointer;
+  text-align: end;
+  margin-block: var(--space-04);
+  padding: var(--space-08);
 }
