@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.form {
+  @include stack-spacing($space-24);
+
+  &__group {
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: $fs-14;
+    color: inherit;
+    padding: $space-16 $space-24;
+    border-radius: 1px;
+    background-color: rgba($color-white-100, $alpha: 0.6);
+    accent-color: $color-primary-100;
+
+    border: none;
+    border-bottom: transparent 3px solid;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black-100, $alpha: 0.1);
+      caret-color: $color-primary-100;
+      border-bottom: $color-primary-100 3px solid;
+
+      &:invalid {
+        border-bottom: $color-secondary-100 3px solid;
+      }
+    }
+
+    &::placeholder {
+      opacity: 0.6;
+    }
+  }
+
+  &__label {
+  }
+}

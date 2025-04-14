@@ -24,7 +24,6 @@ main > * + * {
   width: 100%;
   max-width: clamp(30rem, 80%, 120rem);
   margin-inline: auto;
-  padding: 1rem;
 }
 
 body {
@@ -155,6 +154,18 @@ body {
 }
 .stories > * + * {
   margin-top: clamp(4rem, 5vw, 6.4rem);
+}
+
+.books {
+  background-image: linear-gradient(to right bottom, #7ed56f, #55c57a);
+  padding-block: clamp(8rem, 9vw, 12.8rem);
+}
+.books .book {
+  padding: clamp(4rem, 5vw, 6.4rem);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 100rem;
 }
 
 .header {
@@ -516,6 +527,32 @@ body {
   filter: blur(3px) brightness(80%);
 }
 
+.form > * + * {
+  margin-top: clamp(1.5rem, 2vw, 2.4rem);
+}
+.form__input {
+  font-family: inherit;
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.4rem);
+  color: inherit;
+  padding: clamp(1rem, 1.5vw, 1.6rem) clamp(1.5rem, 2vw, 2.4rem);
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+  accent-color: #55c57a;
+  border: none;
+  border-bottom: transparent 3px solid;
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  caret-color: #55c57a;
+  border-bottom: #55c57a 3px solid;
+}
+.form__input:focus:invalid {
+  border-bottom: #ff7730 3px solid;
+}
+.form__input::placeholder {
+  opacity: 0.6;
+}
 .u-center-items {
   display: flex;
   flex-direction: column;
