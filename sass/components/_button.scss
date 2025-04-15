@@ -4,8 +4,10 @@
 .btn {
   padding: $space-16 $space-48;
 
+  &,
   &:link,
   &:visited {
+    cursor: pointer;
     position: relative;
 
     display: inline-block;
@@ -16,6 +18,7 @@
 
     transition: all 0.2s ease;
 
+    border: none;
     border-radius: 10rem;
   }
 

@@ -1,9 +1,17 @@
+@use "../abstracts" as *;
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0px $color-secondary-100;
+  border-radius: 5px;
 }
 
 html {
