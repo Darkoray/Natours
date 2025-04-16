@@ -5,3 +5,24 @@
     margin-top: $space;
   }
 }
+
+@mixin animated-gradient($direction, $first-color, $second-color) {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    $direction,
+    rgba($first-color, 0.8),
+    rgba($second-color, 0.8),
+    rgba($first-color, 0.8)
+  );
+  background-size: 300% auto;
+  background-position: 0% 50%;
+
+  animation: move-gradient 4s ease-in-out infinite alternate;
+  opacity: 0.5;
+}

@@ -23,10 +23,15 @@
 
     &--back {
       transform: rotateY(180deg);
+      background-size: 600% auto;
+      background-position: 0% 50%;
+      animation: move-gradient 5.2s linear infinite;
 
       &-1 {
         background-image: linear-gradient(
-          to right bottom,
+          135deg,
+          $color-tint-200,
+          $color-secondary-100,
           $color-tint-200,
           $color-secondary-100
         );
@@ -34,7 +39,9 @@
 
       &-2 {
         background-image: linear-gradient(
-          to right bottom,
+          135deg,
+          $color-tint-100,
+          $color-primary-100,
           $color-tint-100,
           $color-primary-100
         );
@@ -42,7 +49,9 @@
 
       &-3 {
         background-image: linear-gradient(
-          to right bottom,
+          135deg,
+          $color-tint-300,
+          $color-tertiary-100,
           $color-tint-300,
           $color-tertiary-100
         );

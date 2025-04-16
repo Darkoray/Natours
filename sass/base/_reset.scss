@@ -8,11 +8,12 @@
   box-sizing: inherit;
 }
 
-*:focus {
-  outline: none;
-  box-shadow: 0 0 0 0px $color-secondary-100;
-  border-radius: 5px;
-}
+// *:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 4px $color-secondary-100;
+//   padding: 2px 4px;
+//   border-radius: 5px;
+// }
 
 html {
   font-size: 62.5%;

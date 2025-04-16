@@ -42,14 +42,27 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
-  background-image: linear-gradient(
-    to right,
-    $color-tint-100,
-    $color-shade-100
-  );
+
+  // background-image: linear-gradient(
+  //   to right,
+  //   $color-tint-100,
+  //   $color-shade-100
+  // );
   background-clip: text;
   color: transparent;
   transition: all 0.2s;
+
+  background-image: linear-gradient(
+    270deg,
+    rgba($color-tint-100, 0.8),
+    rgba($color-shade-100, 0.8),
+    rgba($color-tint-100, 0.8),
+    rgba($color-shade-100, 0.8)
+  );
+  background-size: 300% auto;
+  background-position: 0% 50%;
+
+  animation: move-gradient 5s linear infinite;
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

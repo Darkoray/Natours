@@ -1,9 +1,6 @@
 @use "../abstracts" as *;
 
 .about {
-  background-color: $color-gray-200;
-  // margin-top: -20vh;
-
   &__description {
     @include stack-spacing($space-48);
   }
@@ -22,7 +19,11 @@
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
-  padding-block: $space-128;
+  padding-block: calc($space-96 * 2);
+
+  &::after {
+    @include animated-gradient(135deg, $color-tint-100, $color-shade-100);
+  }
 
   & > * {
     transform: skewY(7deg);
@@ -50,10 +51,16 @@
 
 .booking {
   background-image: linear-gradient(
-    to right bottom,
+    135deg,
+    $color-tint-100,
+    $color-primary-100,
     $color-tint-100,
     $color-primary-100
   );
+  background-size: 400% auto;
+  background-position: 0% 50%;
+  animation: move-gradient 5s linear infinite;
+
   padding-block: $space-128;
   overflow: hidden;
 }
