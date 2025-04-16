@@ -1,0 +1,90 @@
+@use "../abstracts" as *;
+
+.nav {
+  counter-reset: section;
+
+  &__background {
+    z-index: 998;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 60%;
+    position: fixed;
+    inset: 6.5rem 6.5rem auto auto;
+    background-image: radial-gradient($color-tint-100, $color-shade-100);
+
+    scale: 100;
+  }
+
+  &__btn {
+    background-color: $color-white-100;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    inset: 6rem 6rem auto auto;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    &::before {
+      counter-increment: section;
+      content: "0" counter(section) " ";
+    }
+
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: $fs-24;
+      font-weight: 300;
+      color: $color-white-100;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: $space-04 $space-08;
+
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white-100 50%
+      );
+      background-size: 250%;
+      transition: all 0.4s ease;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary-100;
+      translate: 1rem;
+    }
+  }
+
+  &__link-number {
+  }
+
+  &__list {
+    list-style: none;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $space-16;
+  }
+
+  &__menu {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+  }
+}
