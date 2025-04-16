@@ -47,7 +47,7 @@
   }
 
   &--animated {
-    // animation: moveInBottom 0.5s ease-out 0.75s backwards;
+    animation: moveInBottom 0.5s ease-out 0.75s backwards;
   }
 
   &--white {
@@ -78,7 +78,7 @@
     transition: all 0.2s ease;
     z-index: 3;
     &::after {
-      content: "►";
+      content: "⪢";
       position: absolute;
       z-index: 2;
       opacity: 0;
