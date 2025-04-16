@@ -170,28 +170,6 @@ body {
 .nav {
   counter-reset: section;
 }
-.nav__background {
-  z-index: 998;
-  height: 6rem;
-  width: 6rem;
-  border-radius: 60%;
-  position: fixed;
-  inset: 6.5rem 6.5rem auto auto;
-  background-image: radial-gradient(#7ed56f, #28b485);
-  scale: 100;
-}
-.nav__btn {
-  background-color: #fff;
-  height: 7rem;
-  width: 7rem;
-  position: fixed;
-  inset: 6rem 6rem auto auto;
-  border-radius: 50%;
-  z-index: 1000;
-}
-.nav__checkbox {
-  display: none;
-}
 .nav__link::before {
   counter-increment: section;
   content: "0" counter(section) " ";
@@ -213,6 +191,51 @@ body {
   color: #55c57a;
   translate: 1rem;
 }
+.nav__background {
+  z-index: 998;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 60%;
+  position: fixed;
+  inset: 6.5rem 6.5rem auto auto;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  transition: scale 0.8s;
+}
+.nav__btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  inset: 6rem 6rem auto auto;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+.nav__icon {
+  position: relative;
+}
+.nav__icon, .nav__icon::before, .nav__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+}
+.nav__icon::before, .nav__icon::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  transition: all 0.2s ease;
+}
+.nav__icon::before {
+  top: -0.8rem;
+}
+.nav__icon::after {
+  top: 0.8rem;
+}
 .nav__list {
   list-style: none;
   position: absolute;
@@ -222,13 +245,43 @@ body {
   justify-content: center;
   align-items: center;
   gap: clamp(1rem, 1.5vw, 1.6rem);
+  width: 100%;
 }
 .nav__menu {
   height: 100vh;
-  width: 100%;
   position: fixed;
-  inset: 0;
+  inset: 0 0 auto auto;
   z-index: 999;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.49, -0.41, 0, 1.26);
+}
+.nav__checkbox {
+  display: none;
+}
+.nav__checkbox:checked ~ .nav__background {
+  scale: 100;
+}
+.nav__checkbox:checked ~ .nav__menu {
+  opacity: 1;
+  width: 100%;
+}
+.nav__btn:hover .nav__icon::before {
+  top: -1rem;
+}
+.nav__btn:hover .nav__icon::after {
+  top: 1rem;
+}
+.nav__checkbox:checked + .nav__btn .nav__icon {
+  background-color: transparent;
+}
+.nav__checkbox:checked + .nav__btn .nav__icon::before {
+  inset: 0;
+  rotate: 135deg;
+}
+.nav__checkbox:checked + .nav__btn .nav__icon::after {
+  inset: 0;
+  rotate: -135deg;
 }
 
 .header {
