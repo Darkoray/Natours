@@ -6,8 +6,6 @@ body {
   font-size: $default-fs;
   line-height: 1.7;
   color: $color-gray-100;
-
-  padding: $space-12;
 }
 
 .heading-primary {
@@ -24,6 +22,10 @@ body {
     letter-spacing: 3.2rem;
 
     animation: moveInLeft 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+    }
   }
 
   &--sub {
@@ -32,6 +34,10 @@ body {
     letter-spacing: 1.2rem;
 
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -43,11 +49,6 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
 
-  // background-image: linear-gradient(
-  //   to right,
-  //   $color-tint-100,
-  //   $color-shade-100
-  // );
   background-clip: text;
   color: transparent;
   transition: all 0.2s;

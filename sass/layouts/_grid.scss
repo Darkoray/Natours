@@ -5,10 +5,18 @@
 
   &--col-2 {
     grid-template-columns: 1fr 1fr;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &--col-3 {
     grid-template-columns: repeat(3, 1fr);
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
 
     .col-2-of-3 {
       grid-column: span 2;
@@ -17,6 +25,10 @@
 
   &--col-4 {
     grid-template-columns: repeat(4, 1fr);
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
 
     .col-2-of-4 {
       grid-column: span 2;

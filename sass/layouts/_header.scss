@@ -4,6 +4,7 @@
   position: relative;
 
   height: 95vh;
+  height: 95dvh;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-tint-100, 0.8),
@@ -13,7 +14,11 @@
   background-size: cover;
   background-position: top;
 
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 76vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 86vh, 0 100%);
+  }
 
   &::after {
     @include animated-gradient(135deg, $color-tint-100, $color-shade-100);

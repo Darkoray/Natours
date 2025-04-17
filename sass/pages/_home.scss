@@ -1,12 +1,12 @@
 @use "../abstracts" as *;
 
 .about {
-  &__description {
-    @include stack-spacing($space-48);
-  }
-
   .grid {
     gap: $space-48;
+  }
+
+  &__description {
+    @include stack-spacing($space-48);
   }
 }
 
@@ -31,6 +31,10 @@
 
   .grid {
     gap: $space-24;
+
+    @include respond(tab-port) {
+      gap: $space-64;
+    }
   }
 }
 
@@ -39,6 +43,15 @@
 
   .grid {
     gap: $space-48;
+
+    > * {
+      @include respond(tab-port) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
 
@@ -74,6 +87,7 @@
       (transparent 50%)
     ),
     url(../img/nat-10.jpg);
+
   background-size: cover;
   box-shadow: 0 1.5rem 4rem rgba($color-black-100, $alpha: 0.2);
   border-radius: 3px;

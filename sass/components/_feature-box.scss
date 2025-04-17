@@ -14,6 +14,15 @@
     transform: translateY(-1.5rem) scale(1.02);
   }
 
+  @include respond(tab-port) {
+    width: 60%;
+    padding-inline: $space-96;
+  }
+
+  @include respond(phone) {
+    padding: $space-64 $space-24;
+  }
+
   &__icon {
     font-size: $fs-44;
     background-image: linear-gradient(

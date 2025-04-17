@@ -1,5 +1,13 @@
 @use "../abstracts" as *;
 
+body {
+  padding: $space-12;
+
+  @include respond(tab-port) {
+    padding: unset;
+  }
+}
+
 main {
   @include stack-spacing($space-128);
 }

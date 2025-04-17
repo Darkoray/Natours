@@ -16,6 +16,15 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  padding: clamp(0.75rem, 1.2vw, 1.2rem);
+}
+@media screen and (max-width: 56.25em) {
+  body {
+    padding: unset;
+  }
+}
+
 main > * + * {
   margin-top: clamp(8rem, 9vw, 12.8rem);
 }
@@ -32,7 +41,6 @@ body {
   font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
   line-height: 1.7;
   color: #777;
-  padding: clamp(0.75rem, 1.2vw, 1.2rem);
 }
 
 .heading-primary {
@@ -48,11 +56,21 @@ body {
   letter-spacing: 3.2rem;
   animation: moveInLeft 1s ease-out;
 }
+@media screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+  }
+}
 .heading-primary--sub {
   font-size: clamp(1.25rem, 1.4vw + 0.7rem, 2rem);
   font-weight: 500;
   letter-spacing: 1.2rem;
   animation: moveInRight 1s ease-out;
+}
+@media screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -151,14 +169,29 @@ body {
 .grid--col-2 {
   grid-template-columns: 1fr 1fr;
 }
+@media screen and (max-width: 56.25em) {
+  .grid--col-2 {
+    grid-template-columns: 1fr;
+  }
+}
 .grid--col-3 {
   grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 56.25em) {
+  .grid--col-3 {
+    grid-template-columns: 1fr;
+  }
 }
 .grid--col-3 .col-2-of-3 {
   grid-column: span 2;
 }
 .grid--col-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 56.25em) {
+  .grid--col-4 {
+    grid-template-columns: 1fr;
+  }
 }
 .grid--col-4 .col-2-of-4 {
   grid-column: span 2;
@@ -183,8 +216,8 @@ body {
   text-transform: uppercase;
   padding: clamp(0.25rem, 0.5vw, 0.4rem) clamp(0.5rem, 1vw, 0.8rem);
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-  background-size: 250%;
-  transition: all 0.4s ease;
+  background-size: 300%;
+  transition: all 0.3s ease;
 }
 .nav__link:hover, .nav__link:active {
   background-position: 100%;
@@ -197,9 +230,14 @@ body {
   width: 6rem;
   border-radius: 60%;
   position: fixed;
-  inset: 6.5rem 6.5rem auto auto;
+  inset: 3.5rem 3.5rem auto auto;
   background-image: radial-gradient(#7ed56f, #28b485);
   transition: scale 0.8s;
+}
+@media screen and (max-width: 37.5em) {
+  .nav__background {
+    inset: 3.5rem 6.5rem auto auto;
+  }
 }
 .nav__btn {
   cursor: pointer;
@@ -210,10 +248,15 @@ body {
   height: 7rem;
   width: 7rem;
   position: fixed;
-  inset: 6rem 6rem auto auto;
+  inset: 3rem 3rem auto auto;
   border-radius: 50%;
   z-index: 1000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 37.5em) {
+  .nav__btn {
+    inset: 3rem 6rem auto auto;
+  }
 }
 .nav__icon {
   position: relative;
@@ -250,11 +293,11 @@ body {
 .nav__menu {
   height: 100vh;
   position: fixed;
-  inset: 0 0 auto auto;
+  inset: 0 -50rem auto auto;
   z-index: 999;
   opacity: 0;
   width: 0;
-  transition: all 0.8s cubic-bezier(0.49, -0.41, 0, 1.26);
+  transition: all 0.6s cubic-bezier(0.49, -0.41, 0, 1.26);
 }
 .nav__checkbox {
   display: none;
@@ -265,6 +308,7 @@ body {
 .nav__checkbox:checked ~ .nav__menu {
   opacity: 1;
   width: 100%;
+  inset: 0 0 auto auto;
 }
 .nav__btn:hover .nav__icon::before {
   top: -1rem;
@@ -287,10 +331,16 @@ body {
 .header {
   position: relative;
   height: 95vh;
+  height: 95dvh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 76vh, 0 100%);
+}
+@media screen and (max-width: 37.5em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 86vh, 0 100%);
+  }
 }
 .header::after {
   position: absolute;
@@ -330,11 +380,26 @@ body {
   justify-content: space-between;
   gap: clamp(4rem, 5vw, 6.4rem);
 }
+@media screen and (max-width: 56.25em) {
+  .footer .grid {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .footer .grid {
+    width: 80%;
+  }
+}
 .footer__copyright {
   display: flex;
   justify-content: space-between;
   gap: clamp(1.5rem, 2vw, 2.4rem);
   border-top: #777 3px solid;
+}
+@media screen and (max-width: 56.25em) {
+  .footer__copyright {
+    justify-content: space-around;
+  }
 }
 .footer__link {
   transition: all 0.2s;
@@ -363,6 +428,11 @@ body {
   gap: clamp(1.5rem, 2vw, 2.4rem);
   border-top: #777 3px solid;
 }
+@media screen and (max-width: 56.25em) {
+  .footer__list {
+    justify-content: space-around;
+  }
+}
 .footer__logo-box {
   text-align: center;
 }
@@ -379,6 +449,7 @@ body {
 .footer__my-links {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: clamp(1rem, 1.5vw, 1.6rem);
 }
 
@@ -575,6 +646,17 @@ body {
 .feature-box:hover {
   transform: translateY(-1.5rem) scale(1.02);
 }
+@media screen and (max-width: 56.25em) {
+  .feature-box {
+    width: 60%;
+    padding-inline: clamp(6rem, 7vw, 9.6rem);
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .feature-box {
+    padding: clamp(4rem, 5vw, 6.4rem) clamp(1.5rem, 2vw, 2.4rem);
+  }
+}
 .feature-box__icon {
   font-size: clamp(2.75rem, 3.5vw + 1.5rem, 4.4rem);
   background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -586,6 +668,17 @@ body {
   position: relative;
   perspective: 150rem;
   height: 50rem;
+}
+@media screen and (max-width: 56.25em) {
+  .card {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .card {
+    width: 70%;
+    height: 40rem;
+  }
 }
 .card__side {
   position: absolute;
@@ -865,11 +958,11 @@ body {
   opacity: 1;
 }
 
-.about__description > * + * {
-  margin-top: clamp(3rem, 3.5vw, 4.8rem);
-}
 .about .grid {
   gap: clamp(3rem, 3.5vw, 4.8rem);
+}
+.about__description > * + * {
+  margin-top: clamp(3rem, 3.5vw, 4.8rem);
 }
 
 .features {
@@ -897,12 +990,25 @@ body {
 .features .grid {
   gap: clamp(1.5rem, 2vw, 2.4rem);
 }
+@media screen and (max-width: 56.25em) {
+  .features .grid {
+    gap: clamp(4rem, 5vw, 6.4rem);
+  }
+}
 
 .tours > * + * {
   margin-top: clamp(4rem, 5vw, 6.4rem);
 }
 .tours .grid {
   gap: clamp(3rem, 3.5vw, 4.8rem);
+}
+@media screen and (max-width: 56.25em) {
+  .tours .grid > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .stories {
