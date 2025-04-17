@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+.popup {
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color-black-100, $alpha: 0.8);
+  z-index: 9999999999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    scale: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template: auto auto / 30fr 70fr;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      font-size: 3rem;
+      color: $color-gray-400;
+      position: absolute;
+      inset: 1rem 2.5rem auto auto;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-secondary-100;
+    }
+  }
+
+  &__content {
+    background-color: $color-white-100;
+    border-radius: 3px;
+    opacity: 0;
+    scale: 0.25;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s 0.2s ease;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__text-box {
+    grid-area: 1 / 2 / 3 / 3;
+
+    padding: $space-16 $space-32;
+    align-content: center;
+    @include stack-spacing($space-24);
+  }
+
+  &__texts {
+    display: flex;
+    gap: $space-12;
+
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}

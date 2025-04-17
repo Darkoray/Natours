@@ -382,6 +382,70 @@ body {
   gap: clamp(1rem, 1.5vw, 1.6rem);
 }
 
+.popup {
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup:target .popup__content {
+  opacity: 1;
+  scale: 1;
+}
+.popup__grid {
+  display: grid;
+  grid-template: auto auto/30fr 70fr;
+}
+.popup__close:link, .popup__close:visited {
+  font-size: 3rem;
+  color: #333;
+  position: absolute;
+  inset: 1rem 2.5rem auto auto;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.popup__close:hover, .popup__close:active {
+  color: #ff7730;
+}
+.popup__content {
+  background-color: #fff;
+  border-radius: 3px;
+  opacity: 0;
+  scale: 0.25;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s 0.2s ease;
+}
+.popup__img {
+  width: 100%;
+}
+.popup__text-box {
+  grid-area: 1/2/3/3;
+  padding: clamp(1rem, 1.5vw, 1.6rem) clamp(2rem, 2.5vw, 3.2rem);
+  align-content: center;
+}
+.popup__text-box > * + * {
+  margin-top: clamp(1.5rem, 2vw, 2.4rem);
+}
+.popup__texts {
+  display: flex;
+  gap: clamp(0.75rem, 1.2vw, 1.2rem);
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .btn {
   padding: clamp(1rem, 1.5vw, 1.6rem) clamp(3rem, 3.5vw, 4.8rem);
 }
