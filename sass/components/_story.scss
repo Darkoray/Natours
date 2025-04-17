@@ -8,6 +8,14 @@
   padding: $space-48 $space-64;
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0deg);
+  }
+
   &__shape {
     float: left;
     width: 15rem;
@@ -16,6 +24,10 @@
     clip-path: circle();
     margin-inline: $space-16;
     transform: translateX(-2rem) skewX(12deg);
+
+    @include respond(phone) {
+      transform: translateX(-2rem) skewX(0deg);
+    }
   }
 
   &__caption {
@@ -37,6 +49,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0deg);
+    }
   }
 
   &:hover &__caption {

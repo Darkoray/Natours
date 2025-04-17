@@ -5,14 +5,14 @@
   perspective: 150rem;
   height: 50rem;
 
-  @include respond(tab-port) {
-    width: 50%;
-  }
+  // @include respond(tab-port) {
+  //   width: 50%;
+  // }
 
-  @include respond(phone) {
-    width: 70%;
-    height: 40rem;
-  }
+  // @include respond(phone) {
+  //   width: 70%;
+  //   height: 40rem;
+  // }
 
   &__side {
     position: absolute;
@@ -189,5 +189,40 @@
   &__price-value {
     font-size: $fs-62;
     font-weight: 200;
+  }
+}
+
+@include respond(tab-port) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white-100;
+    box-shadow: 0 1.5rem 4rem rgba($color-black-100, $alpha: 0.15);
+
+    &__side {
+      position: relative;
+
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+      &--back {
+        transform: rotateY(0deg);
+        padding: $space-48 $space-96;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__details {
+      padding-block: $space-24;
+    }
+
+    &__cta {
+      padding-block: $space-24 $space-12;
+      gap: $space-12;
+    }
   }
 }

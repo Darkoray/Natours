@@ -3,14 +3,37 @@
 .form {
   @include stack-spacing($space-48);
 
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__group {
     position: relative;
     width: 40%;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      width: 60%;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
 
     &--radio {
       display: flex;
       justify-content: space-between;
       gap: $space-12;
+
+      @include respond(phone) {
+        flex-direction: column;
+      }
     }
   }
 

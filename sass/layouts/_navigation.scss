@@ -46,10 +46,6 @@
     inset: 3.5rem 3.5rem auto auto;
     background-image: radial-gradient($color-tint-100, $color-shade-100);
     transition: scale 0.8s;
-
-    @include respond(phone) {
-      inset: 3.5rem 6.5rem auto auto;
-    }
   }
 
   &__btn {
@@ -66,10 +62,6 @@
     border-radius: 50%;
     z-index: 1000;
     box-shadow: 0 1rem 3rem rgba($color-black-100, $alpha: 0.1);
-
-    @include respond(phone) {
-      inset: 3rem 6rem auto auto;
-    }
   }
 
   &__icon {
