@@ -82,6 +82,10 @@
     height: 23rem;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
+    @include respond(tab-port) {
+      height: 20rem;
+    }
+
     &--1 {
       background-image: linear-gradient(
           to right bottom,

@@ -29,7 +29,7 @@
     grid-template: auto auto / 30fr 70fr;
 
     @include respond(tab-land) {
-      grid-template: 1fr 1fr / 1fr 1fr;
+      grid-template: auto 1fr / 1fr 1fr;
     }
   }
 
@@ -61,7 +61,7 @@
     transition: all 0.4s 0.2s ease;
 
     @include respond(tab-land) {
-      height: 90vh;
+      height: auto;
     }
 
     // @include respond(tab-port) {

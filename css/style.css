@@ -477,7 +477,7 @@ body {
 }
 @media screen and (max-width: 75em) {
   .popup__grid {
-    grid-template: 1fr 1fr/1fr 1fr;
+    grid-template: auto 1fr/1fr 1fr;
   }
 }
 .popup__close:link, .popup__close:visited {
@@ -503,7 +503,7 @@ body {
 }
 @media screen and (max-width: 75em) {
   .popup__content {
-    height: 90vh;
+    height: auto;
   }
 }
 .popup__img {
@@ -753,6 +753,11 @@ body {
   background-blend-mode: screen;
   height: 23rem;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+@media screen and (max-width: 56.25em) {
+  .card__picture {
+    height: 20rem;
+  }
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
