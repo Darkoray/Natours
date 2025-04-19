@@ -17,9 +17,20 @@
       rgba($color-tint-100, 0.8),
       rgba($color-shade-100, 0.8)
     ),
-    url(../img/nat-4.jpg);
+    url(../img/nat-4-small.jpg);
   background-size: cover;
   padding-block: calc($space-96 * 2);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tint-100, 0.8),
+        rgba($color-shade-100, 0.8)
+      ),
+      url(../img/nat-4.jpg);
+  }
 
   &::after {
     @include animated-gradient(135deg, $color-tint-100, $color-shade-100);
@@ -109,6 +120,6 @@
         rgba($color-white-100, 0.8) 100%,
         (transparent 100%)
       ),
-      url(../img/nat-10.jpg);
+      url(../img/nat-10-small.jpg);
   }
 }

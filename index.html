@@ -105,15 +105,25 @@
           <div class="col-1-of-2 u-margin-top--md u-margin-bottom--lg">
             <div class="composition">
               <img
+                srcset="./img/nat-1.jpg 300w, ./img/nat-1-large.jpg 1000w"
                 src="./img/nat-1-large.jpg"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
-              /><img
+              />
+
+              <img
+                srcset="./img/nat-2.jpg 300w, ./img/nat-2-large.jpg 1000w"
                 src="./img/nat-2-large.jpg"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 2"
                 class="composition__photo composition__photo--p2"
-              /><img
+              />
+
+              <img
+                srcset="./img/nat-3.jpg 300w, ./img/nat-3-large.jpg 1000w"
                 src="./img/nat-3-large.jpg"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
               />
@@ -323,10 +333,13 @@
           <div class="story">
             <figure class="story__shape">
               <img
+                srcset="./img/nat-8.jpg 600w, ./img/nat-8-large.jpg 2000w"
                 src="../img/nat-8.jpg"
+                sizes="(max-width: 56.25em) 35vw, (max-width: 37.5em) 54vw, 315px"
                 alt="Person on a tour"
                 class="story__img"
               />
+
               <figcaption class="story__caption u-center-items">
                 Mary Smith
               </figcaption>
@@ -350,10 +363,13 @@
           <div class="story">
             <figure class="story__shape">
               <img
+                srcset="./img/nat-9.jpg 600w, ./img/nat-9-large.jpg 2000w"
                 src="../img/nat-9.jpg"
+                sizes="(max-width: 56.25em) 35vw, (max-width: 37.5em) 54vw, 315px"
                 alt="Person on a tour"
                 class="story__img"
               />
+
               <figcaption class="story__caption u-center-items">
                 Jack Willson
               </figcaption>
@@ -452,11 +468,23 @@
 
     <footer class="footer">
       <div class="footer__logo-box container">
-        <img
-          src="../img/logo-green-2x.png"
-          alt="Full logo"
-          class="footer__logo"
-        />
+        <picture class="footer__logo">
+          <source
+            srcset="
+              ../img/logo-green-small-1x.png 1x,
+              ../img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="
+              ../img/logo-green-1x.png 1x,
+              ../img/logo-green-2x.png 2x
+            "
+            src="../img/logo-green-2x.png"
+            alt="Full logo"
+          />
+        </picture>
       </div>
       <div class="grid grid--col-2 container">
         <div class="grid-1-of-2">
@@ -585,12 +613,17 @@
         <a href="#tours" class="popup__close">&times;</a>
 
         <img
-          src="../img/nat-8.jpg"
+          srcset="./img/nat-8.jpg 600w, ./img/nat-8-large.jpg 2000w"
+          src="./img/nat-8.jpg"
+          sizes="(max-width: 56.25em) 40vw, (max-width: 37.5em) 40vw, 360px"
           alt="Tour photo"
           class="popup__img popup__img--1"
         />
+
         <img
-          src="../img/nat-9.jpg"
+          srcset="./img/nat-9.jpg 600w, ./img/nat-9-large.jpg 2000w"
+          src="./img/nat-9.jpg"
+          sizes="(max-width: 56.25em) 40vw, (max-width: 37.5em) 40vw, 360px"
           alt="Tour photo"
           class="popup__img popup__img--2"
         />

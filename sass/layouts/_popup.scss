@@ -7,8 +7,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba($color-black-100, $alpha: 0.8);
   z-index: 9999999999;
+  background-color: rgba($color-black-100, $alpha: 0.8);
+
+  @supports (
+    -webkit-backdrop-filter: blur(10px) or (backdrop-filter: blur(10px))
+  ) {
+    background-color: rgba($color-black-100, $alpha: 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 
   opacity: 0;
   visibility: hidden;

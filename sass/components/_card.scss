@@ -5,14 +5,14 @@
   perspective: 150rem;
   height: 50rem;
 
-  // @include respond(tab-port) {
-  //   width: 50%;
-  // }
+  @include respond(tab-port) {
+    width: 50%;
+  }
 
-  // @include respond(phone) {
-  //   width: 70%;
-  //   height: 40rem;
-  // }
+  @include respond(phone) {
+    width: 70%;
+    height: 40rem;
+  }
 
   &__side {
     position: absolute;
@@ -92,7 +92,18 @@
           $color-tint-200,
           $color-secondary-100
         ),
-        url(../img/nat-5.jpg);
+        url(../img/nat-5-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tint-200,
+            $color-secondary-100
+          ),
+          url(../img/nat-5.jpg);
+      }
     }
     &--2 {
       background-image: linear-gradient(
@@ -100,7 +111,18 @@
           $color-tint-100,
           $color-primary-100
         ),
-        url(../img/nat-6.jpg);
+        url(../img/nat-6-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tint-100,
+            $color-primary-100
+          ),
+          url(../img/nat-6.jpg);
+      }
     }
     &--3 {
       background-image: linear-gradient(
@@ -108,7 +130,18 @@
           $color-tint-300,
           $color-tertiary-100
         ),
-        url(../img/nat-7.jpg);
+        url(../img/nat-7-small.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tint-300,
+            $color-tertiary-100
+          ),
+          url(../img/nat-7.jpg);
+      }
     }
   }
 

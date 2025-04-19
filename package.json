@@ -4,11 +4,14 @@
   "description": "landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass sass/main.scss css/style.css -w"
+    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/iconfont.css css/style.comp.css"
   },
   "author": "Darkoray",
   "license": "ISC",
   "devDependencies": {
+    "concat": "^1.0.3",
     "sass": "^1.86.3"
   }
 }

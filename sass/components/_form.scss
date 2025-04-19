@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .form {
-  @include stack-spacing($space-48);
+  @include stack-spacing($space-64);
 
   @include respond(tab-port) {
     display: flex;
@@ -47,7 +47,6 @@
     border: none;
 
     font-size: $fs-14;
-    padding: $space-16 $space-12 $space-08;
     font-family: inherit;
     color: inherit;
     accent-color: $color-primary-100;
@@ -55,12 +54,22 @@
     z-index: 10;
     transition: all 0.3s ease;
 
+    padding: $space-16 $space-12 $space-08;
+
     &:focus,
     &:not(:placeholder-shown) {
       & ~ .form__label {
         opacity: 1;
         color: $color-primary-100;
         transform: translateX(-4px) translateY(-5rem);
+
+        @include respond(tab-land) {
+          transform: translateX(-4px) translateY(-4rem);
+        }
+
+        @include respond(tab-port) {
+          transform: translateX(-4px) translateY(-3.6rem);
+        }
       }
 
       & ~ .form__input-box {
@@ -68,6 +77,14 @@
         background-color: rgba($color-white-100, $alpha: 0.6);
         box-shadow: 0 1rem 2rem rgba($color-black-100, $alpha: 0.1);
         border-radius: 1px;
+
+        @include respond(tab-land) {
+          height: 4rem;
+        }
+
+        @include respond(tab-port) {
+          height: 3.6rem;
+        }
       }
 
       &:valid {
