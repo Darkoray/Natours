@@ -8,13 +8,6 @@
   box-sizing: inherit;
 }
 
-// *:focus {
-//   outline: none;
-//   box-shadow: 0 0 0 4px $color-secondary-100;
-//   padding: 2px 4px;
-//   border-radius: 5px;
-// }
-
 html {
   font-size: 62.5%;
 }
@@ -22,4 +15,19 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+::selection {
+  background-color: $color-primary-100;
+  color: $color-white-100;
+}
+
+:focus-visible {
+  outline: 6px solid rgba($color-secondary-100, 0.8);
+  outline-offset: 6px;
+  border-radius: 5px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
