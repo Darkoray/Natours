@@ -2,6 +2,7 @@
 
 .btn {
   padding: $space-16 $space-48;
+  font-family: inherit;
 
   &,
   &:link,
@@ -12,7 +13,7 @@
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    white-space: nowrap;
+    text-wrap: nowrap;
 
     font-size: $default-fs;
 
@@ -98,7 +99,7 @@
     font-size: $default-fs;
     color: $color-primary-100;
     text-decoration: none;
-    white-space: nowrap;
+    text-wrap: nowrap;
 
     border-bottom: 1px solid $color-primary-100;
     padding: $space-02 $space-08;

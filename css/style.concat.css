@@ -1020,6 +1020,7 @@ body {
 
 .btn {
   padding: clamp(1rem, 1.5vw, 1.6rem) clamp(3rem, 3.5vw, 4.8rem);
+  font-family: inherit;
 }
 .btn, .btn:link, .btn:visited {
   cursor: pointer;
@@ -1027,7 +1028,7 @@ body {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  white-space: nowrap;
+  text-wrap: nowrap;
   font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
   transition: all 0.2s ease;
   border: none;
@@ -1088,7 +1089,7 @@ body {
   font-size: clamp(1rem, 1vw + 0.5rem, 1.6rem);
   color: #55c57a;
   text-decoration: none;
-  white-space: nowrap;
+  text-wrap: nowrap;
   border-bottom: 1px solid #55c57a;
   padding: clamp(0.12rem, 0.3vw, 0.25rem) clamp(0.5rem, 1vw, 0.8rem);
   transition: all 0.2s ease-in-out;
@@ -1400,10 +1401,14 @@ body {
   margin-inline: clamp(1rem, 1.5vw, 1.6rem);
   transform: translateX(-2rem) skewX(12deg);
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .story__shape {
     width: 10rem;
     height: 10rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .story__shape {
     transform: translateX(-2rem) skewX(0deg);
   }
 }
