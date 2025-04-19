@@ -24,9 +24,9 @@ _[Advanced CSS and Sass](https://www.udemy.com/advanced-css-and-sass/?couponCode
 
 ## Technologies Used
 
-- <span style="color:#cf649a"><b>Sass (SCSS)</b></span>
-- <span style="color:#f06529"><b>HTML5</b></span>
-- <span style="color:#2965f1"><b>CSS3</b></span>
+- **<span style="color:#cf649a">Sass (SCSS)</span>**
+- **<span style="color:#f06529">HTML5</span>**
+- **<span style="color:#2965f1">CSS3</span>**
 
 ---
 
