@@ -3,14 +3,14 @@
 .header {
   position: relative;
 
-  height: 85vh;
-  height: 85dvh;
+  height: min(85vh, 50rem);
+  height: min(85dvh, 50rem);
   background-image: linear-gradient(
       to right bottom,
       rgba($color-tint-100, 0.8),
       rgba($color-shade-100, 0.8)
     ),
-    url(../img/hero-small.jpg);
+    url(../img/hero.webp);
   background-size: cover;
   background-position: top;
 
@@ -23,16 +23,16 @@
     height: 95dvh;
   }
 
-  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-    (min-width: 125em) {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($color-tint-100, 0.8),
-        rgba($color-shade-100, 0.8)
-      ),
-      url(../img/hero.jpg);
-  }
+  // @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+  //   (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+  //   (min-width: 125em) {
+  //   background-image: linear-gradient(
+  //       to right bottom,
+  //       rgba($color-tint-100, 0.8),
+  //       rgba($color-shade-100, 0.8)
+  //     ),
+  //     url(../img/hero-large.webp);
+  // }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 86vh, 0 100%);

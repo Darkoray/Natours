@@ -17,7 +17,7 @@
       rgba($color-tint-100, 0.8),
       rgba($color-shade-100, 0.8)
     ),
-    url(../img/nat-4-small.jpg);
+    url(../img/nat-4.webp);
   background-size: cover;
   padding-block: calc($space-96 * 2);
 
@@ -29,7 +29,7 @@
         rgba($color-tint-100, 0.8),
         rgba($color-shade-100, 0.8)
       ),
-      url(../img/nat-4.jpg);
+      url(../img/nat-4-large.webp);
   }
 
   &::after {
@@ -97,7 +97,7 @@
       rgba($color-white-100, 0.8) 50%,
       (transparent 50%)
     ),
-    url(../img/nat-10.jpg);
+    url(../img/nat-10-large.webp);
 
   background-size: cover;
   box-shadow: 0 1.5rem 4rem rgba($color-black-100, $alpha: 0.2);
@@ -110,7 +110,7 @@
         rgba($color-white-100, 0.8) 70%,
         (transparent 70%)
       ),
-      url(../img/nat-10.jpg);
+      url(../img/nat-10-large.webp);
   }
 
   @include respond(tab-port) {
@@ -120,6 +120,6 @@
         rgba($color-white-100, 0.8) 100%,
         (transparent 100%)
       ),
-      url(../img/nat-10-small.jpg);
+      url(../img/nat-10.webp);
   }
 }

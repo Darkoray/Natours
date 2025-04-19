@@ -92,7 +92,7 @@
           $color-tint-200,
           $color-secondary-100
         ),
-        url(../img/nat-5-small.jpg);
+        url(../img/nat-5.webp);
 
       @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
@@ -102,7 +102,7 @@
             $color-tint-200,
             $color-secondary-100
           ),
-          url(../img/nat-5.jpg);
+          url(../img/nat-5-large.webp);
       }
     }
     &--2 {
@@ -111,7 +111,7 @@
           $color-tint-100,
           $color-primary-100
         ),
-        url(../img/nat-6-small.jpg);
+        url(../img/nat-6.webp);
 
       @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
@@ -121,7 +121,7 @@
             $color-tint-100,
             $color-primary-100
           ),
-          url(../img/nat-6.jpg);
+          url(../img/nat-6-large.webp);
       }
     }
     &--3 {
@@ -130,7 +130,7 @@
           $color-tint-300,
           $color-tertiary-100
         ),
-        url(../img/nat-7-small.jpg);
+        url(../img/nat-7.webp);
 
       @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
@@ -140,7 +140,7 @@
             $color-tint-300,
             $color-tertiary-100
           ),
-          url(../img/nat-7.jpg);
+          url(../img/nat-7-large.webp);
       }
     }
   }
