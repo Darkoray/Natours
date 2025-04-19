@@ -26,6 +26,8 @@
     transform: translateX(-2rem) skewX(12deg);
 
     @include respond(phone) {
+      width: 10rem;
+      height: 10rem;
       transform: translateX(-2rem) skewX(0deg);
     }
   }
